@@ -1,0 +1,25 @@
+<div>
+  <strong>Titulo:</strong>
+  <%= @book.title %>
+  <div>
+    <div>
+      <% if !@book.notes.nil? %>
+        <% @book.notes.order(updated_at: :desc).each do |note| %>
+          <div class="col">
+            <h5><%= note.title %></h5>
+            <p><%= note.content %></p>
+            <%= link_to 'Editar', edit_note_path(note.id) %>
+          </div>
+        <% end %>
+      <% else %>
+        <p>¡Este cuaderno no tiene notas!</p>
+      <% end %>
+      <%= link_to 'Crear nueva nota', new_note_path %>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_book_path(@book) %> |
+<%= link_to 'Exportar', export_book_path(@book) %> |
+<%= link_to 'Volver', books_path %>
+

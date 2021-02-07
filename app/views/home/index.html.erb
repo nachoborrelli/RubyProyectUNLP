@@ -1,0 +1,29 @@
+
+<%- if user_signed_in? %>
+  <div>
+    <h4>Cuadernos</h4>
+    <hr class="my-4">
+  </div>
+  <% if !@books.nil? %>
+    <p>Estos son tus cuadernos:</p>
+    <% @books.each do |book| %>
+      <tr>
+        <th><%= book.title %> | </th>
+        <th><%= book.notes.count %> notas | </th>
+        <th><%= link_to 'Mostrar', book %> | </th>
+        <th><%= link_to 'Editar', edit_book_path(book) %> | </th>
+        <th><%= link_to 'Eliminar', book, method: :delete, data: { confirm: 'Estas seguro?' } %></th>
+      </tr>
+      <br>
+      <% end %>
+  <% else %>
+    <p>¡No tienes cuadernos, crea uno!</p>
+  <% end %>
+  </br>
+  <%= link_to 'Crear cuaderno', new_book_path %>
+  </br>
+  <%= link_to 'Exportar todo', export_every_notes_path %>
+<% else %>
+  <p> Inicia sesión para ver todas tus notas. </p>
+<% end %>
+

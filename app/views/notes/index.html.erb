@@ -1,0 +1,36 @@
+<h1>Notas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Cuaderno</th>
+      <th>Contenido</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notes.each do |note| %>
+      <tr>
+        <td><%= note.title %></td>
+        <% if note.book %>
+          <td><%= note.book.title  %></td>
+        <% else %>
+          <td>Global</td>
+        <% end %>
+        <td><div class="div-short-container">
+          <p class="inside-short-container"><%= note.content %></p>
+        </div></td>
+        <td><%= link_to 'Ver', note %></td>
+        <td><%= link_to 'Editar', edit_note_path(note) %></td>
+        <td><%= link_to 'Eliminar', note, method: :delete, data: { confirm: 'Estas seguro que deseas eliminarla? Esta acción es irreversible' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear nota', new_note_path %>
+<%= link_to 'Exportar todo', export_every_notes_path %>

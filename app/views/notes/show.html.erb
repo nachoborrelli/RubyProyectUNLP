@@ -1,0 +1,14 @@
+<p>
+  <strong>Titulo:</strong>
+  <%= @note.title %>
+</p>
+
+<p>
+  <strong>Contenido:</strong>
+  <%= @note.content %>
+</p>
+
+<%= link_to 'Editar', edit_note_path(@note) %> |
+<%= link_to 'Exportar', export_note_path %> |
+<%= link_to 'Volver', notes_path %>
+
