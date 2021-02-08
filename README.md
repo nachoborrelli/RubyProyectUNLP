@@ -18,6 +18,8 @@
     Ejecutar ```rails s``` para iniciar el servidor, y acceder a 127.0.0.1:3000
 
 
+
+
 ***Decisiones de diseño***
 
 - Para el modelo de datos se utilizaron Scaffolds, lo que permitió generar vistas, controladores y modelos de datos pre-definidos
