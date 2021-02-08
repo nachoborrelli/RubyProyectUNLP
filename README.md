@@ -2,7 +2,7 @@
   Ruby 2.7.0
 
 * System dependencies  
-  Ejecutar ```bundle install``` dentro de la app "blog"
+  Ejecutar ```bundle install```
 
 
 * Database creation
@@ -30,4 +30,4 @@ Decisiones de diseño
 - La exportacion de mas de una nota se realiza mediante un zip.
 
 - Para el registro e inicio de sesión se utilizo la gema "Devise"
-# RubyProyectUNLP
+
